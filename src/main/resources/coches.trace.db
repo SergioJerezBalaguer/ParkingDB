@@ -1,0 +1,1184 @@
+2024-06-28 11:38:44.083646+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]"
+General error: "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1529)
+	at org.h2.mvstore.FileStore.lambda$serializeAndStore$3(FileStore.java:1432)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]"
+General error: "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 12 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	... 7 more
+Caused by: java.lang.AssertionError: 20480 != 16384
+	at org.h2.mvstore.RandomAccessStore.shrinkStoreIfPossible(RandomAccessStore.java:679)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:377)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:28)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1524)
+	... 6 more
+2024-06-28 11:41:43.148398+02:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Error General : "Error General : ""org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]""\000aGeneral error: ""org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]"" [50000-224]"
+General error: "Error General : ""org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]""\000aGeneral error: ""org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]"" [50000-224]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:1817)
+	at org.h2.engine.SessionLocal.close(SessionLocal.java:890)
+	at org.h2.jdbc.JdbcConnection.close(JdbcConnection.java:391)
+	at com.dbn.connection.jdbc.DBNConnection.closeInner(DBNConnection.java:231)
+	at com.dbn.connection.jdbc.DBNResource$1.changeInner(DBNResource.java:50)
+	at com.dbn.connection.jdbc.ResourceStatusAdapterImpl.lambda$changeControlled$5(ResourceStatusAdapterImpl.java:230)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.Timeout.lambda$call$0(Timeout.java:38)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]"
+General error: "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1529)
+	at org.h2.mvstore.FileStore.lambda$serializeAndStore$3(FileStore.java:1432)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	... 4 more
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]"
+General error: "org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 12 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.AssertionError: 20480 != 16384 [2.2.224/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	... 7 more
+Caused by: java.lang.AssertionError: 20480 != 16384
+	at org.h2.mvstore.RandomAccessStore.shrinkStoreIfPossible(RandomAccessStore.java:679)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:377)
+	at org.h2.mvstore.RandomAccessStore.writeChunk(RandomAccessStore.java:28)
+	at org.h2.mvstore.FileStore.storeBuffer(FileStore.java:1524)
+	... 6 more
+2024-06-28 11:42:27.540826+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:46:49.115343+02:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PUBLIC" no encontrada
+Table "PUBLIC" not found; SQL statement:
+select * from PUBLIC [42102-224]
+2024-06-28 11:47:35.065856+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:48:20.116816+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:49:33.983289+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:50:14.870024+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:50:29.609553+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbH2.searchAllFilterHoraSalida(ManagerDbH2.java:95)
+	at learning.tokioschool.parking.Parking.imprimirCochesParking(Parking.java:47)
+	at learning.tokioschool.parking.App.main(App.java:36)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:50:56.495593+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:51:01.253448+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbH2.searchAllFilterHoraSalida(ManagerDbH2.java:95)
+	at learning.tokioschool.parking.Parking.imprimirCochesParking(Parking.java:47)
+	at learning.tokioschool.parking.App.main(App.java:36)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:53:33.403424+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:53:38.132842+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-06-28 11:54:34.762885+02:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COCHES" no encontrada
+Table "COCHES" not found; SQL statement:
+select * from COCHES [42102-224]
+2024-06-28 11:54:34.769146+02:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-06-28 11:55:08.678043+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbH2.search(ManagerDbH2.java:51)
+	at learning.tokioschool.parking.Parking.existeCoche(Parking.java:22)
+	at learning.tokioschool.parking.App.registrarSalidaCoche(App.java:98)
+	at learning.tokioschool.parking.App.main(App.java:32)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 16 more
+2024-06-28 11:56:24.158127+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COCHES" no encontrada
+Table "COCHES" not found; SQL statement:
+select * from COCHES [42102-224]
+2024-06-28 11:56:24.164029+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-06-29 13:19:48.098872+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-07-01 11:07:49.494831+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-07-01 11:19:33.471424+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COCHES" no encontrada
+Table "COCHES" not found; SQL statement:
+select * from COCHES [42102-224]
+2024-07-01 11:19:33.479242+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:20:25.372657+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Values of types "TIMESTAMP" and "INTEGER" are not comparable; SQL statement:
+select * from COCHES where HORAENTRADA = 11 [90110-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.value.TypeInfo.checkComparable(TypeInfo.java:766)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:167)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:20:25.379007+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:20:43.302713+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "AUDI" no encontrada
+Column "AUDI" not found; SQL statement:
+select * from COCHES where MARCA = audi [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:148)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:20:43.309057+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:23:15.611125+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+insert into COCHES values ('9999PPP', 'ferrari' , '413') [21002-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:23:15.619455+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:23:47.328852+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLDataException: Imposible interpretar la constante "TIMESTAMP" "28 jun 2024 11:56:17"
+Cannot parse "TIMESTAMP" constant "28 jun 2024 11:56:17"; SQL statement:
+insert into COCHES values ('9999PPP', 'ferrari' , '413' ,'28 jun 2024 11:56:17', null ) [22007-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:518)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:88)
+	at org.h2.value.Value.convertToTimestamp(Value.java:2001)
+	at org.h2.value.Value.convertTo(Value.java:1174)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1113)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:936)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.IllegalArgumentException: 28 jun 2024 11:56:17
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.util.DateTimeUtils.parseTimestamp(DateTimeUtils.java:338)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:86)
+	... 24 more
+2024-07-01 11:23:47.336266+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:24:07.571021+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:24:32.021234+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "HORAENTRADA" no encontrada
+Column "HORAENTRADA" not found; SQL statement:
+insert into COCHES values ('9999PPP', 'ferrari' , '413' ,HORAENTRADA, HORASALIDA ) [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:24:32.028213+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:25:09.775077+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:27:57.772567+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-07-01 11:29:42.261001+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COCHES" no encontrada
+Table "COCHES" not found; SQL statement:
+update COCHES set MATRICULA = '7912LDR' , modelo = 'cooperator' [42102-224]
+2024-07-01 11:29:42.267519+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:29:47.061931+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:30:07.701256+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:33:14.687763+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:39:56.832649+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Values of types "TIMESTAMP" and "INTEGER" are not comparable; SQL statement:
+select * from COCHES where HORAENTRADA > 28 [90110-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.value.TypeInfo.checkComparable(TypeInfo.java:766)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:167)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:39:56.840452+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:41:15.627681+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Imposible interpretar la constante "TIMESTAMP" "12:23:34"
+Cannot parse "TIMESTAMP" constant "12:23:34"; SQL statement:
+select * from Coches WHERE HORAENTRADA > '12:23:34' [22007-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:518)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:88)
+	at org.h2.value.Value.convertToTimestamp(Value.java:2001)
+	at org.h2.value.Value.convertTo(Value.java:1174)
+	at org.h2.value.Value.convertTo(Value.java:1047)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:197)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.NumberFormatException: For input string: "12:2"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.util.DateTimeUtils.parseTimestamp(DateTimeUtils.java:338)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:86)
+	... 25 more
+2024-07-01 11:41:15.635200+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:41:50.499717+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Función "TIME" no encontrada
+Function "TIME" not found; SQL statement:
+SELECT * FROM Coches WHERE TIME(HoraEntrada) > '12:23:34' [90022-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readFunction(Parser.java:3786)
+	at org.h2.command.Parser.readTermWithIdentifier(Parser.java:5148)
+	at org.h2.command.Parser.readTerm(Parser.java:4834)
+	at org.h2.command.Parser.readFactor(Parser.java:3337)
+	at org.h2.command.Parser.readSum(Parser.java:3324)
+	at org.h2.command.Parser.readConcat(Parser.java:3289)
+	at org.h2.command.Parser.readCondition(Parser.java:3079)
+	at org.h2.command.Parser.readExpressionWithGlobalConditions(Parser.java:2989)
+	at org.h2.command.Parser.parseSelect(Parser.java:2827)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2708)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2564)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2543)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2536)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2529)
+	at org.h2.command.Parser.parseQuery(Parser.java:2498)
+	at org.h2.command.Parser.parsePrepared(Parser.java:627)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:41:50.507204+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:42:48.902574+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "FORMATDATETIME" no encontrada
+Column "FORMATDATETIME" not found; SQL statement:
+SELECT * FROM Coches WHERE FORMATDATETIME [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.dbn.connection.jdbc.DBNStatement.lambda$execute$0(DBNStatement.java:163)
+	at com.dbn.connection.jdbc.DBNStatement.managed(DBNStatement.java:139)
+	at com.dbn.connection.jdbc.DBNStatement.execute(DBNStatement.java:163)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:434)
+	at com.dbn.execution.statement.processor.StatementExecutionBasicProcessor$1.execute(StatementExecutionBasicProcessor.java:430)
+	at com.dbn.common.thread.CancellableDatabaseCall.lambda$call$1(CancellableDatabaseCall.java:86)
+	at com.dbn.common.thread.ThreadMonitor.surround(ThreadMonitor.java:93)
+	at com.dbn.common.thread.CancellableDatabaseCall.call(CancellableDatabaseCall.java:59)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-07-01 11:42:48.910213+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:44:28.054556+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-01 11:49:48.374501+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:39)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:50)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-07-04 11:06:58.094522+02:00 database: wrong user or password; user: "ROOT"
+org.h2.message.DbException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+	at learning.tokioschool.parking.DataSourceDB.<clinit>(DataSourceDB.java:24)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:38)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:49)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+2024-07-04 15:28:39.487077+02:00 database: wrong user or password; user: ""
+org.h2.message.DbException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:253)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:37)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:48)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 15 more
+2024-07-04 15:29:47.032270+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:37)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:48)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 15 more
+2024-07-04 15:39:00.756646+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.iniConexion(ManagerDbAbstract.java:37)
+	at learning.tokioschool.parking.db.ManagerDbAbstract.crearTabla(ManagerDbAbstract.java:48)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:15)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/java.lang.invoke.DirectMethodHandle.checkInitialized(DirectMethodHandle.java:383)
+	at java.base/java.lang.invoke.DirectMethodHandle.ensureInitialized(DirectMethodHandle.java:371)
+	at java.base/java.lang.invoke.DirectMethodHandle.internalMemberNameEnsureInit(DirectMethodHandle.java:336)
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:385)
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:374)
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:296)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 30 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 24 more
+2024-07-04 17:51:04.293675+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-04 17:51:04.293963+02:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-07-04 17:51:43.352455+02:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:80)
+	at learning.tokioschool.parking.DatabaseSource.<clinit>(DatabaseSource.java:21)
+	at learning.tokioschool.parking.db.ManagerH2.<init>(ManagerH2.java:15)
+	at learning.tokioschool.parking.Parking.<init>(Parking.java:13)
+	at learning.tokioschool.parking.App.<clinit>(App.java:8)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/java.lang.invoke.DirectMethodHandle.checkInitialized(DirectMethodHandle.java:383)
+	at java.base/java.lang.invoke.DirectMethodHandle.ensureInitialized(DirectMethodHandle.java:371)
+	at java.base/java.lang.invoke.DirectMethodHandle.internalMemberNameEnsureInit(DirectMethodHandle.java:336)
+	at org.codehaus.mojo.exec.ExecJavaMojo.doMain(ExecJavaMojo.java:385)
+	at org.codehaus.mojo.exec.ExecJavaMojo.doExec(ExecJavaMojo.java:374)
+	at org.codehaus.mojo.exec.ExecJavaMojo.lambda$execute$0(ExecJavaMojo.java:296)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 35 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/sergiojerez/Downloads/parkingDB/src/main/resources/coches.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 29 more
